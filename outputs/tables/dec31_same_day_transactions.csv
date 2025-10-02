@@ -1,0 +1,16 @@
+SalesOrderID,InvoiceDate,ShipDate,CustName,TerritoryName,SubTotal,PaymentStatus,PaidDate
+3826,2017-12-31,2017-12-31,Hurricane Hospital Supply,Southeast,244400,Paid,2018-01-29 00:00:00
+3846,2017-12-31,2017-12-31,Quad Tech,West,244400,Unpaid,9999-09-09 00:00:00
+3822,2017-12-31,2017-12-31,Ravenbar,Southeast,219960,Paid,2018-01-30 00:00:00
+3832,2017-12-31,2017-12-31,Monarch Intelligent Devices,West,151335,Paid,2018-01-28 00:00:00
+3829,2017-12-31,2017-12-31,Worldgold,Southeast,134520,Paid,2018-01-30 00:00:00
+3821,2017-12-31,2017-12-31,Tempestechnologies,West,122850,Paid,2018-01-30 00:00:00
+3828,2017-12-31,2017-12-31,Griffintube,West,87100,Paid,2018-01-30 00:00:00
+3845,2017-12-31,2017-12-31,Shadearts,West,73320,Unpaid,9999-09-09 00:00:00
+3840,2017-12-31,2017-12-31,Quad Tech,West,61975,Unpaid,9999-09-09 00:00:00
+3842,2017-12-31,2017-12-31,Shadearts,West,55700,Unpaid,9999-09-09 00:00:00
+3827,2017-12-31,2017-12-31,Lagoonavigations,Midwest,51350,Paid,2018-01-28 00:00:00
+3831,2017-12-31,2017-12-31,Monarctronics,Northeast,50895,Paid,2018-01-30 00:00:00
+3823,2017-12-31,2017-12-31,Grasshop Products,Southwest,45240,Paid,2018-01-27 00:00:00
+3825,2017-12-31,2017-12-31,Buzzy Bee Medical,Northeast,44160,Unpaid,9999-09-09 00:00:00
+3830,2017-12-31,2017-12-31,Sprite Devices,Northeast,41940,Paid,2018-01-28 00:00:00

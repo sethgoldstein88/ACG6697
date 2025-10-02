@@ -1,0 +1,5 @@
+Category,Count,Revenue Impact
+Total 2017 Revenue Transactions,1158,"$84,867,855.00"
+Complete Matches (Order + Ship + Invoice),1156,"$84,696,775.00"
+EXCEPTION: Invoiced but NOT Shipped,2,"$171,080.00"
+Match Rate (%),99.8%,N/A

@@ -1,0 +1,3 @@
+InvoiceID,SalesOrderID,InvoiceDate,CustName,TerritoryName,SubTotal,PaymentStatus
+101775,3824,2017-12-31,Witchystems,West,97760,Unpaid
+101793,3843,2017-12-31,Witchystems,West,73320,Unpaid

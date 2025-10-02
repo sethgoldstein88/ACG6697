@@ -1,0 +1,6 @@
+SalesOrderID,InvoiceID,CustID,CustName,TerritoryID,InvoiceDate,DaysPastDue,TotalDue,PaymentStatus
+3236,101190,30,Acewell,3,2017-07-04,180,56251.34,Unpaid
+3241,101196,3,Moonlight Medical,5,2017-07-09,175,73450.67,Unpaid
+3422,101375,63,Buzzy Bee Medical,1,2017-09-05,117,73450.67,Unpaid
+3466,101419,63,Buzzy Bee Medical,1,2017-09-21,101,59932.092,Unpaid
+3490,101443,6,Radiantelligence,2,2017-09-27,95,54851.15,Unpaid

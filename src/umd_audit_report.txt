@@ -1,0 +1,56 @@
+UMD AUDIT ANALYSIS REPORT
+============================================================
+Generated on: 2025-09-27 19:42:35
+
+EXECUTIVE SUMMARY
+--------------------
+Overall Risk Assessment: LOW
+Risk Score: 0/5
+
+FINANCIAL STATEMENT VERIFICATION
+-----------------------------------
+Revenue Analysis:
+• Transactions identified: 1,168
+• Total revenue calculated: $85,518,640.00
+• Expected revenue: $84,867,855.00
+
+Accounts Receivable Analysis:
+• Unpaid invoices identified: 0
+• Expected AR balance: $11,988,886.00
+
+THREE-WAY MATCH RESULTS
+-------------------------
+Sales Shipment:
+• Match rate: 99.74%
+
+Shipment Invoice:
+• Match rate: 0.00%
+
+Three Way:
+• Match rate: 0.00%
+
+CREDIT ANALYSIS
+---------------
+
+AGING ANALYSIS
+---------------
+• Allowance assessment: reasonable
+
+FRAUD RISK ASSESSMENT
+----------------------
+Key Fraud Risk Factors:
+• Aggressive Sales Targets and Incentive Compensation
+• Related Party Transactions with Distributors
+• Weak Internal Controls Over Revenue Recognition
+
+Recommended Actions:
+• Perform detailed testing of revenue recognition timing, especially for Q4 transactions
+• Obtain confirmations from distributors regarding inventory held by company
+• Obtain confirmations from distributors regarding inventory held by company
+• Review system logs for after-hours modifications and obtain explanations
+• Interview sales personnel about pressure to meet targets
+
+OVERALL AUDIT RECOMMENDATIONS
+--------------------------------
+• Standard audit procedures appear sufficient
+• Monitor for changes in risk factors

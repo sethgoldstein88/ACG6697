@@ -1,0 +1,15 @@
+CustName,TerritoryName,BillHoldFlag,UnpaidFlag,PeriodEndFlag,FraudScore,SubTotal
+Shadearts,West,0,5,3,8,1358315
+Quad Tech,West,0,4,4,8,1839075
+Buzzy Bee Medical,Northeast,0,6,1,7,893960
+Witchystems,West,0,2,2,4,171080
+Lagoonavigations,Midwest,0,1,2,3,915385
+Grasshop Products,Southwest,0,1,2,3,1351015
+Monarctronics,Northeast,0,0,2,2,865940
+Gold ,Southeast,0,1,1,2,986875
+Electrorks,Southeast,0,1,1,2,1686170
+Flipbook Devices,Northeast,0,2,0,2,996500
+Woodbite,West,0,1,1,2,1255075
+Whiz Systems,Northeast,0,1,1,2,1084305
+Sharkfin Industries,West,0,0,2,2,904560
+Karmaman Bionics,Midwest,0,1,1,2,1345145

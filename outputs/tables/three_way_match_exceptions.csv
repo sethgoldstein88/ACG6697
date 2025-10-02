@@ -1,0 +1,3 @@
+InvoiceID,SalesOrderID,InvoiceDate,SubTotal,Has_Order,Has_Shipment
+101775,3824,2017-12-31,97760,True,False
+101793,3843,2017-12-31,73320,True,False

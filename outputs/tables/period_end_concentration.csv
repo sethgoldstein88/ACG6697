@@ -1,0 +1,40 @@
+InvoiceDate,SalesOrderID,CustName,TerritoryName,SubTotal,PaymentStatus
+2017-12-29,3806,Deserprises,Southeast,171080,Paid
+2017-12-29,3804,Quad Tech,West,146640,Unpaid
+2017-12-29,3807,Soulwell,Southeast,97760,Paid
+2017-12-29,3803,Alpine Medical,Southeast,73320,Paid
+2017-12-29,3800,Woodbite,West,54600,Paid
+2017-12-29,3799,Lagoonavigations,Midwest,33930,Paid
+2017-12-29,3801,Sharkfin Industries,West,33120,Paid
+2017-12-29,3805,Grasshop Products,Southwest,27300,Unpaid
+2017-12-29,3808,Quad Tech,West,24645,Paid
+2017-12-29,3802,Karmaman Bionics,Midwest,11040,Paid
+2017-12-30,3814,WaterMalone Devices,Northeast,171080,Paid
+2017-12-30,3815,Monarctronics,Northeast,136500,Paid
+2017-12-30,3812,Beta Sports Medicine,West,123950,Paid
+2017-12-30,3818,Shadearts,West,111555,Unpaid
+2017-12-30,3811,Gold ,Southeast,100890,Paid
+2017-12-30,3816,Whiz Systems,Northeast,97760,Unpaid
+2017-12-30,3819,Desert Medical,Southeast,81900,Paid
+2017-12-30,3817,Midnightelligence,Midwest,71890,Paid
+2017-12-30,3820,Icecaproductions,West,26130,Paid
+2017-12-30,3809,Mountain Medical,Southwest,16965,Paid
+2017-12-30,3810,Sharkfin Industries,West,16560,Paid
+2017-12-30,3813,Electrorks,Southeast,13425,Unpaid
+2017-12-31,3826,Hurricane Hospital Supply,Southeast,244400,Paid
+2017-12-31,3846,Quad Tech,West,244400,Unpaid
+2017-12-31,3822,Ravenbar,Southeast,219960,Paid
+2017-12-31,3832,Monarch Intelligent Devices,West,151335,Paid
+2017-12-31,3829,Worldgold,Southeast,134520,Paid
+2017-12-31,3821,Tempestechnologies,West,122850,Paid
+2017-12-31,3824,Witchystems,West,97760,Unpaid
+2017-12-31,3828,Griffintube,West,87100,Paid
+2017-12-31,3843,Witchystems,West,73320,Unpaid
+2017-12-31,3845,Shadearts,West,73320,Unpaid
+2017-12-31,3840,Quad Tech,West,61975,Unpaid
+2017-12-31,3842,Shadearts,West,55700,Unpaid
+2017-12-31,3827,Lagoonavigations,Midwest,51350,Paid
+2017-12-31,3831,Monarctronics,Northeast,50895,Paid
+2017-12-31,3823,Grasshop Products,Southwest,45240,Paid
+2017-12-31,3825,Buzzy Bee Medical,Northeast,44160,Unpaid
+2017-12-31,3830,Sprite Devices,Northeast,41940,Paid
