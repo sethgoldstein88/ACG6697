@@ -43,3 +43,11 @@ exports_for_teammates/
 # Project specific
 *.zip
 
+# Internal files (not for teammates)
+PROJECT_CONTEXT.md
+GOOGLE_COLAB_SETUP.md
+BEST_SHARING_METHOD.md
+prepare_for_colab.sh
+export_notebooks_html.sh
+src/
+

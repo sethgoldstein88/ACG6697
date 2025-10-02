@@ -2,97 +2,133 @@
 
 Comprehensive data analysis for the Urgent Medical Device (UMD) audit case, examining potential revenue fraud in fiscal year 2017.
 
-## Project Overview
+## Overview
 
-This project analyzes sales, shipments, invoices, and customer data to identify fraud risk factors and control failures in UMD's revenue recognition process. The analysis supports an academic audit memo examining $84.9M in revenue and $12M in accounts receivable.
+This project analyzes UMD's sales, shipments, invoices, and customer data to identify fraud risk factors and control failures in the revenue recognition process for fiscal year 2017.
 
-## Key Findings
+**Trial Balance Amounts:**
+- Sales Revenue: $84,867,855
+- Accounts Receivable: $11,988,886
+- Allowance for Doubtful Accounts: $315,000
 
-- **Three-Way Match Exceptions**: 2 invoices totaling $171K recognized without shipment
-- **Period-End Revenue Concentration**: $1.8M (2.1% of revenue) recorded on December 31 alone
-- **Credit Limit Manipulation**: 22 distributors (30%) had limits increased in Q4 2017
-- **Collection Risk**: 31 invoices ($2.6M) remain completely unpaid
-- **Inadequate Allowance**: Current reserve $315K vs. recommended $707K
-
-## Project Structure
+## Repository Structure
 
 ```
-notebooks/
-  ├── 01_data_loading.ipynb           # Data quality verification
-  ├── 02_fraud_risk_factors.ipynb     # Req 1: Fraud risk identification
-  ├── 02_reconciliation.ipynb         # Req 2: Revenue & AR reconciliation
-  ├── 03_three_way_match.ipynb        # Req 3: Orders-Shipments-Invoices match
-  ├── 04_credit_analysis.ipynb        # Req 4-5: Credit limit testing
-  ├── 05_aging_analysis.ipynb         # Req 6: Aging & allowance adequacy
-  └── 06_fraud_detection.ipynb        # Req 7: Additional fraud analysis
-
-data/
-  └── [6 Excel files with source data]
-
-outputs/
-  ├── tables/    # CSV exception lists and analysis results
-  └── figures/   # Professional visualizations
+📁 notebooks/          # Analysis notebooks (01-06)
+📁 data/              # Source Excel files (6 datasets)
+📁 outputs/
+  ├── tables/         # CSV files with detailed findings
+  └── figures/        # Charts and visualizations
 ```
 
-## How to Use
+## How to Use This Repository
 
-**For Memo Writers (Non-Technical):**
-1. Open any notebook in GitHub (click on `.ipynb` files above)
-2. Scroll to the TOP → See "📋 ANSWER TO REQUIREMENT" section
-3. Scroll to the BOTTOM → See "📊 Summary & Audit Implications"
-4. Download CSV/PNG files from `outputs/` folder as needed
+### For Memo Writers
 
-**For Analysts (To Re-Run):**
-```bash
-# Clone repository
-git clone https://github.com/YOUR_USERNAME/umd-audit-analysis.git
-cd umd-audit-analysis
+**Each notebook answers one specific requirement:**
 
-# Install dependencies
-uv sync
+1. Open any notebook (click on `.ipynb` files in `notebooks/` folder)
+2. **Scroll to TOP** → See "ANSWER TO REQUIREMENT" section with key findings
+3. **Scroll to BOTTOM** → See "Summary & Audit Implications" section
+4. Download supporting files from `outputs/` folder as needed
 
-# Run notebooks
-jupyter notebook
-```
+**You don't need to run any code - just read the notebooks!**
 
-## Requirements Analysis
+### Notebooks Overview
 
-| Requirement | Notebook | Status | Key Finding |
-|-------------|----------|--------|-------------|
-| 1. Fraud Risk Factors | `02_fraud_risk_factors.ipynb` | ✅ Complete | 3 factors: Bill-and-hold, cutoff manipulation, management override |
-| 2. Revenue/AR Reconciliation | `02_reconciliation.ipynb` | ✅ Complete | 1,158 records = $84.9M revenue; 148 invoices = $12M AR |
-| 3. Three-Way Match | `03_three_way_match.ipynb` | ✅ Complete | 2 exceptions: $171K invoiced but not shipped |
-| 4. Sales w/o Credit Limits | `04_credit_analysis.ipynb` | ✅ Complete | No exceptions found |
-| 5. AR Exceeding Limits | `04_credit_analysis.ipynb` | ✅ Complete | No exceptions (but 22 limits increased in Q4) |
-| 6. Aging Analysis | `05_aging_analysis.ipynb` | ✅ Complete | 5 invoices >90 days; allowance inadequate |
-| 7. Additional Fraud Analysis | `06_fraud_detection.ipynb` | ✅ Complete | Period-end stuffing, credit manipulation detected |
+| Notebook | Requirement | Key Finding |
+|----------|-------------|-------------|
+| `02_fraud_risk_factors.ipynb` | Req 1: Fraud Risk Factors | Bill-and-hold, cutoff manipulation, management override |
+| `02_reconciliation.ipynb` | Req 2: Revenue/AR Reconciliation | 1,158 records = $84.9M; 148 invoices = $12M AR |
+| `03_three_way_match.ipynb` | Req 3: Three-Way Match | 2 exceptions: $171K invoiced but not shipped |
+| `04_credit_analysis.ipynb` | Req 4-5: Credit Limits | No violations found (but 22 limits increased in Q4) |
+| `05_aging_analysis.ipynb` | Req 6: Aging Analysis | 5 invoices >90 days; allowance inadequate |
+| `06_fraud_detection.ipynb` | Req 7: Additional Analysis | Dec 31 concentration, credit manipulation |
 
-## Key Technologies
+## Key Findings Summary
 
-- **Python 3.13** - Data analysis
-- **Pandas** - Data manipulation
-- **Jupyter** - Interactive notebooks
-- **Matplotlib/Seaborn** - Visualizations
+### Critical Issues Identified:
 
-## Audit Assertions Tested
+1. **Three-Way Match Failures**
+   - 2 invoices ($171,080) recognized without shipment
+   - Both on December 31, 2017 (cutoff manipulation)
 
-- ✅ **Existence/Occurrence** - Failed (invoiced but not shipped)
-- ✅ **Cutoff** - Failed (Dec 31 concentration)
-- ✅ **Valuation** - Concern (inadequate allowance)
+2. **Period-End Revenue Stuffing**
+   - $1.8M in revenue (2.1% of total) recorded on December 31 alone
+   - Pattern consistent with channel stuffing
+
+3. **Credit Limit Manipulation**
+   - 22 distributors (30% of customer base) had credit limits increased in Q4 2017
+   - Explains why no "over limit" exceptions found
+
+4. **Collection Risk**
+   - 31 invoices ($2.6M) remain completely unpaid
+   - 148 invoices ($12M) outstanding at year-end
+
+5. **Inadequate Allowance**
+   - Current allowance: $315,000
+   - Recommended based on aging: $707,000
+   - Shortfall: $392,000
+
+### Audit Assertions at Risk:
+
+- ❌ **Existence/Occurrence** - Failed (invoiced but not shipped)
+- ❌ **Cutoff** - Failed (December 31 concentration)
+- ⚠️ **Valuation** - Concern (inadequate allowance)
 - ✅ **Accuracy** - Passed (reconciliation complete)
 
-## Documentation
+## Output Files
 
-- `PROJECT_CONTEXT.md` - Project guidelines and structure
-- `umdcase.md` - Case background and requirements
-- `BEST_SHARING_METHOD.md` - How to share this project
-- `notebooks/00_findings_summary.md` - Quick reference for all findings
+### Tables (CSV format in `outputs/tables/`)
 
-## License
+Ready to import into Excel or Word:
+- `invoiced_not_shipped.csv` - Critical exceptions
+- `three_way_match_exceptions.csv` - All match failures
+- `high_risk_customers.csv` - Collection risk analysis
+- `aging_over_90_days.csv` - Past due invoices
+- `q4_credit_limit_changes.csv` - Suspicious limit increases
+- ...and 14 more detailed analysis files
 
-Academic project for educational purposes.
+### Figures (PNG format in `outputs/figures/`)
 
-## Contributors
+Professional visualizations ready for presentation:
+- `fraud_analysis.png` - Fraud pattern overview
+- `three_way_match_exceptions.png` - Exception analysis
+- `aging_analysis.png` - AR aging distribution
+- `credit_analysis.png` - Credit utilization
+- `period_end_revenue.png` - Q4 revenue patterns
 
-Seth Goldstein - Data Analysis
+## Data Sources
 
+All analysis based on 6 Excel files in `data/` folder:
+- Sales Orders (1,168 records)
+- Shipments (1,165 records)
+- Customer Invoices (1,167 records)
+- Customer Master (73 distributors)
+- Sales Territory (5 territories)
+- Products (14 SKUs)
+
+## Quick Reference: What to Use Where
+
+**For the main memo findings:**
+- Start with `notebooks/00_findings_summary.md` for complete overview
+- Reference specific notebooks for detailed analysis
+
+**For exception lists:**
+- Use CSV files from `outputs/tables/`
+
+**For visual support:**
+- Use PNG charts from `outputs/figures/`
+
+**For understanding methodology:**
+- Read the analysis sections within each notebook
+
+## Questions?
+
+- See `umdcase.md` for case background and requirements
+- Check `notebooks/README.md` for notebook usage guide
+- Review `notebooks/00_findings_summary.md` for complete findings reference
+
+---
+
+**Note:** This is an academic project for educational purposes. All data and analysis relate to a fictional audit case.
