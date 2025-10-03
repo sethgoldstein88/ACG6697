@@ -1,0 +1,20 @@
+---
+alwaysApply: true
+---
+# Install/sync dependencies
+uv sync
+
+# Add a new dependency
+uv add package-name
+
+# Remove a dependency
+uv remove package-name
+
+# Run Python with the virtual environment
+uv run python your-script.py
+
+# Run any command in the virtual environment
+uv run command
+
+# Activate the virtual environment manually (if needed)
+source .venv/bin/activate

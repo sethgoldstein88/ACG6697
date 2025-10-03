@@ -1,2 +1,3 @@
-Note
-NO EXCEPTIONS: All customers with AR are within credit limits
+CustID,CustName,TerritoryID,AR_Balance,CredLimit,AmountOver,CreditUtilization,InvoiceCount
+42,Quad Tech,5,750882.73,500000,250882.72999999998,1.5017654599999999,6
+16,Shadearts,5,496063.257,250000,246063.25699999998,1.984253028,6

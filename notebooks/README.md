@@ -1,6 +1,6 @@
 # UMD Audit Analysis - Notebooks
 
-## 🎯 For Memo Writers: How to Use These Notebooks
+How to Use These Notebooks
 
 **Each notebook is SELF-CONTAINED and answers one requirement completely.**
 

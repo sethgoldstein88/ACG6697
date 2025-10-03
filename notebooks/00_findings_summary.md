@@ -67,11 +67,11 @@ _This is a REFERENCE DOCUMENT ONLY. All actual findings are in the individual no
 - **Accuracy** - Are amounts correct?
 - **Valuation** - Is AR collectible?
 
-**Controls Tested (all "no exceptions noted" at interim):**
-1. Three-way match (order → shipment → invoice)
-2. Credit checks for new customers
-3. Sales authorization vs. credit limits
-4. Monthly allowance review (>90 days)
+**Controls Tested (mixed results at interim):**
+1. Three-way match (order → shipment → invoice) - **2 EXCEPTIONS** (unshipped invoices)
+2. Credit checks for new customers - **EFFECTIVE** (no exceptions)
+3. Sales authorization vs. credit limits - **2 EXCEPTIONS** (customers over limits)
+4. Monthly allowance review (>90 days) - **EFFECTIVE** (identification accurate)
 
 ---
 
@@ -85,7 +85,7 @@ _This is a REFERENCE DOCUMENT ONLY. All actual findings are in the individual no
 - `three_way_match_summary.csv` - Three-way match results
 - `three_way_match_exceptions.csv` - All 2 exceptions detailed
 - `sales_without_credit_limits.csv` - No exceptions found
-- `ar_exceeding_credit_limits.csv` - No exceptions found
+- `ar_exceeding_credit_limits.csv` - 2 customers exceeding limits (Quad Tech, Shadearts)
 - `ar_credit_analysis_full.csv` - Complete AR analysis with 60 customers
 - `aging_analysis_full.csv` - Complete aging for all 148 AR invoices
 - `aging_over_90_days.csv` - 5 invoices >90 days past due  
@@ -144,6 +144,7 @@ _This is a REFERENCE DOCUMENT ONLY. All actual findings are in the individual no
   - 117 invoices (79%) paid in early 2018 (but were in AR at year-end)
 - Collection rate: 87.2% of 2017 invoices collected by year-end (1,010 of 1,158)
 - AR represents 14.1% of annual revenue (relatively high)
+- **Data quality improvement:** Reconciliation precision enhanced to show $0.08 variance
 
 **Key Patterns Identified:**
 - Q4 revenue concentration needs investigation (potential channel stuffing)
@@ -163,23 +164,27 @@ _This is a REFERENCE DOCUMENT ONLY. All actual findings are in the individual no
 - All 73 distributors have documented credit limits ($50K-$500K range)
 - Control #2 (Credit Limit Establishment) appears EFFECTIVE
 
-**Requirement 5 - AR Exceeding Credit Limits: NO EXCEPTIONS**
-- All 60 customers with AR as of 12/31/2017 are within credit limits
-- Highest utilization: 99.4% (Hurricane Hospital Supply)
-- Control #3 (Sales Authorization) appears EFFECTIVE
+**Requirement 5 - AR Exceeding Credit Limits: 2 CRITICAL EXCEPTIONS**
+- **Quad Tech (CustID 42):** $750,882.73 balance vs $500,000 limit = $250,882.73 over (150.2% utilization)
+- **Shadearts (CustID 16):** $496,063.26 balance vs $250,000 limit = $246,063.26 over (198.4% utilization)
+- Control #3 (Sales Authorization) **FAILED** - 2 customers (3.3%) exceeding limits
+- Combined over-limit exposure: $496,946 (4.1% of total AR balance)
 
-**Critical Concerns Despite Clean Results:**
-- 10 customers (16.7%) have >80% credit utilization - potential collection risk
-- Clean results may indicate credit limits were increased during Q4 2017
-- Need to investigate TIMING of credit limit changes
-- **Recommendation:** Test whether limits were modified to circumvent controls during fraud period
+**Critical Concerns - Control Failure:**
+- Both over-limit customers received shipments in December 2017 during fraud period
+- **Quad Tech:** 6 invoices totaling $750,882.73 (all unpaid)
+- **Shadearts:** 6 invoices totaling $496,063.26 (all unpaid)
+- Pattern suggests credit limits may have been circumvented during Q4 rush
+- **Recommendation:** Investigate whether sales were authorized despite exceeding limits
 
 **Further Testing Needed:**
-1. Review ModifiedDate field in Customer Master for Q4 2017 limit changes
-2. Analyze high-utilization customers for collectibility
-3. Compare credit limits 9/30/2017 vs 12/31/2017
-4. Interview credit manager about Q4 limit increases
-5. Cross-reference high-utilization customers with bill-and-hold exceptions
+1. **URGENT:** Investigate credit limit override procedures for Quad Tech and Shadearts
+2. Review ModifiedDate field in Customer Master for Q4 2017 limit changes
+3. Analyze high-utilization customers for collectibility
+4. Compare credit limits 9/30/2017 vs 12/31/2017
+5. Interview credit manager about Q4 limit increases and override authorizations
+6. Cross-reference over-limit customers with bill-and-hold exceptions
+7. Review sales authorization documentation for December 2017 transactions
 
 ### From Aging Analysis (05_aging_analysis.ipynb):
 
@@ -199,21 +204,21 @@ _This is a REFERENCE DOCUMENT ONLY. All actual findings are in the individual no
 - **31 invoices totaling $2.6M remain completely unpaid** (no subsequent collection)
 - **Two three-way match exceptions ($184K) are unpaid** - goods never shipped, likely disputed
 - Only 1 invoice in 61-90 day bucket ($19,275)
-- 73.2% of AR is current (0-30 days) - appears healthy on surface
+- 94.7% of AR is current (0-30 days) - appears very healthy on surface, but unpaid invoices are concern
 
 **Aging Composition:**
-- 0-30 days: 103 invoices ($8.8M) - 73.2%
-- 31-60 days: 24 invoices ($1.8M) - 15.2%
+- 0-30 days: 138 invoices ($11.3M) - 94.7%
+- 31-60 days: 4 invoices ($303K) - 2.5%
 - 61-90 days: 1 invoice ($19K) - 0.2%
 - >90 days: 5 invoices ($318K) - 2.7%
-- Unpaid invoices: 31 invoices ($2.6M) - 21.7%
+- Unpaid invoices: 31 invoices ($2.6M) - 22.3%
 
 **Recommended Allowance (Industry Standards):**
 - >90 days at 100%: $317,936
 - 61-90 days at 50%: $9,638
 - Disputed invoices at 100%: $184,025 (three-way match exceptions)
-- 31-60 days at 10%: $195,867
-- **Total: ~$707K** (vs current $315K = $392K shortfall)
+- 31-60 days at 10%: $30,344
+- **Total: ~$542K** (vs current $315K = $227K shortfall)
 
 **Audit Implications:**
 - Control #4 works for identification but **reserve methodology is inadequate**
